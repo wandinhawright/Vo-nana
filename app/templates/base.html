@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>{% block title %}Caliandra{% endblock %}</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+       
+    body {
+        /* Caminho para a imagem que você salvou */
+    background-image: url("{% static 'img/background.png' %}");
+    
+    /* Faz a imagem se repetir para preencher toda a tela */
+    background-repeat: repeat;
+    
+    /* Mantém a imagem fixa enquanto você rola a página (efeito elegante) */
+    background-attachment: fixed;
+    
+    /* Garante que o fundo creme preencha caso a imagem demore a carregar */
+    background-color: #fcfbdf;
+        }
+    .animado-subir {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a volta */
+}
+
+.animado-subir:hover {
+    transform: translateY(-10px); /* Move 10 pixels para cima */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Aumenta a sombra */
+}
+    margin: 0;
+    padding: 0;
+    
+    </style>
+</head>
+<body>
+
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<style>
+    /* Cores do projeto Caliandra Vó Naná */
+    :root {
+        --verde-escuro: #A5692B;
+        --verde-claro: #02740f;
+        --creme: #002414;
+    }
+
+    .header-vo-nana {
+        background-color: var(--verde-escuro);
+        position: relative;
+        border-bottom: 4px solid var(--verde-claro);
+    }
+
+    /* Faixa superior para Redes Sociais */
+    .top-bar {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 5px 0;
+    }
+
+    /* Estilo do containerzinho ao redor do ícone */
+    .icon-moldura {
+        background-color: #fdf5e6; /* Cor creme/bege do fundo */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+        /* Arredondamento superior (estilo abóbada) */
+        border-radius: 8px 8px 0 0; 
+        transition: transform 0.2s;
+        text-decoration: none !important;
+    }
+    .icon-moldura i {
+        color: #001F11; /* Verde petróleo escuro para o ícone contrastar */
+        font-size: 1.1rem;
+    }
+    .icon-moldura:hover {
+        transform: translateY(-3px);
+        background-color: #268500;
+    }
+
+
+    /* Ajuste na barra superior para alinhar os novos ícones */
+    .social-icons {
+        display: flex;
+        align-items: flex-end; /* Alinha na base da moldura */
+        height: 40px;
+    }
+
+    /* Menu de Navegação */
+    .nav-container {
+        display: flex;
+        align-items: flex-end; /* Alinha os itens na base */
+        justify-content: space-between;
+        padding-bottom: 7px;
+        padding-top: 7px; 
+    }
+
+    .nav-link-custom {
+        color: white !important;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        padding: 12px 15px;
+        text-decoration: none;
+    }
+   
+    .nav-link-custom:hover {
+        transform: translateY(-3px);
+        color: black !important;
+    }
+
+
+    /* O Semicírculo Central do Logo */
+    .logo-central-box {
+        background-color: var(--creme);
+        width: 220px;
+        height: 160px;
+        border-radius: 0 0 100px 100px; /* Semicírculo para baixo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 10;
+        padding: 15px;
+    }
+
+    .logo-central-box img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Ajuste para não deixar o menu colado no logo */
+    .menu-side {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+    }
+   
+    
+    @media (max-width: 991px) 
+    /* Faz o container principal empilhar os itens verticalmente */
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px; /* Dá espaço para o logo que está absoluto */
+    }
+</style>
+
+<header class="header-vo-nana">
+    <div class="top-bar">
+        <div class="container d-flex justify-content-start">
+            <div class="social-icons">
+                <a href="https://wa.me/556196561099" class="icon-moldura"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/vo_nana" class="icon-moldura"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:vonana@vonana.com.br" class="icon-moldura"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="nav-container">
+            
+            <nav class="menu-side">
+                <a href="#" class="nav-link-custom">Ínicio</a>
+                <a href="#" class="nav-link-custom">Sobre</a>
+                <a href="#" class="nav-link-custom">Nossos produtos</a>
+            </nav>
+
+            <div class="logo-central-box">
+                <img src="{% static 'img/logovonana.png' %}" alt="Caliandra Vó Naná">
+            </div>
+
+            <nav class="menu-side">
+                <a href="#" class="nav-link-custom">Seja um Revendedor</a>
+                
+            </nav>
+
+        </div>
+    </div>
+</header>
+ <style>
+    /* Estilização do Botão Flutuante de WhatsApp */
+    .whatsapp-float {
+        position: fixed;
+        width: 70px;
+        height: 70px;
+        bottom: 40px;
+        right: 40px;
+        z-index: 9999;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0 8px 15px rgba(0,0,0,0.2));
+    }
+
+    .whatsapp-icon-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* Ajuste para telas pequenas (Mobile) */
+    @media screen and (max-width: 768px) {
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+</style>
+
+<a href="https://wa.me/556196561099" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <img src="{% static 'img/whatsapp.png' %}" alt="Fale conosco no WhatsApp" class="whatsapp-icon-img">
+</a>
+    <main class="container my-5">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <style>
+    .custom-footer {
+        background-color: #002413; /* Verde bem escuro do fundo */
+        color: white;
+        padding: 40px 0;
+        border-top: 2px solid #002e16;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Estilização do Logo */
+    .footer-logo {
+        max-width: 180px;
+        height: auto;
+    }
+
+    .footer-title {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    /* Contatos e Redes Sociais */
+    .footer-contacts {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-contacts li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    .footer-contacts a {
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+        margin-left: 10px;
+        transition: opacity 0.2s;
+    }
+
+    .footer-contacts a:hover {
+        opacity: 0.8;
+    }
+
+    .footer-icon {
+        width: 30px;
+        height: auto;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+        .footer-contacts li {
+            justify-content: center;
+        }
+    }
+</style>
+
+<footer class="custom-footer">
+    <div class="container">
+        <div class="footer-container">
+            
+            <div class="footer-section">
+                <img src="{% static 'img/logocomfundo.png' %}" alt="Pão de Queijo Vó Naná" class="footer-logo">
+            </div>
+
+            <div class="footer-section">
+                <h2 class="footer-title">Conecte-se conosco!</h2>
+            </div>
+
+            <div class="footer-section">
+                <ul class="footer-contacts">
+                    <li>
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="footer-icon">
+                        <a href="https://instagram.com/vo_nana" target="_blank">@vó_Nana</a>
+                    </li>
+                    <li>
+                        <img src="https://img.icons8.com/ios-filled/100/ffffff/mail.png" alt="Email" class="footer-icon">
+                        <a href="mailto:vonana@vonana.com.br">vonana@vonana.com.br</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
