@@ -22,6 +22,8 @@
     
     /* Garante que o fundo creme preencha caso a imagem demore a carregar */
     background-color: #fcfbdf;
+    margin: 0;
+    padding: 0;
         }
     .animado-subir {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a volta */
@@ -31,8 +33,7 @@
     transform: translateY(-10px); /* Move 10 pixels para cima */
     box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Aumenta a sombra */
 }
-    margin: 0;
-    padding: 0;
+
     
     </style>
 </head>
@@ -49,13 +50,13 @@
 <style>
     /* Cores do projeto Caliandra Vó Naná */
     :root {
-        --verde-escuro: #A5692B;
+        --castanho-dourado: #A5692B;
         --verde-claro: #02740f;
-        --creme: #002414;
+        --preto: #002414;
     }
 
     .header-vo-nana {
-        background-color: var(--verde-escuro);
+        background-color: var(--castanho-dourado);
         position: relative;
         border-bottom: 4px solid var(--verde-claro);
     }
@@ -124,7 +125,7 @@
 
     /* O Semicírculo Central do Logo */
     .logo-central-box {
-        background-color: var(--creme);
+        background-color: var(--preto);
         width: 220px;
         height: 160px;
         border-radius: 0 0 100px 100px; /* Semicírculo para baixo */
@@ -153,13 +154,14 @@
     }
    
     
-    @media (max-width: 991px) 
+    @media (max-width: 991px) {
     /* Faz o container principal empilhar os itens verticalmente */
     .nav-container {
         flex-direction: column;
         align-items: center;
         padding-top: 60px; /* Dá espaço para o logo que está absoluto */
     }
+}
 </style>
 
 <header class="header-vo-nana">
