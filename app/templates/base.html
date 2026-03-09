@@ -179,9 +179,9 @@
         <div class="nav-container">
             
             <nav class="menu-side">
-                <a href="#" class="nav-link-custom">Ínicio</a>
-                <a href="#" class="nav-link-custom">Sobre</a>
-                <a href="#" class="nav-link-custom">Nossos produtos</a>
+                <a href="{% url 'index' %}" class="nav-link-custom">Ínicio</a>
+                <a href="{% url 'sobre' %}" class="nav-link-custom">Sobre</a>
+                <a href="{% url 'produtos' %}" class="nav-link-custom">Nossos produtos</a>
             </nav>
 
             <div class="logo-central-box">
@@ -189,7 +189,7 @@
             </div>
 
             <nav class="menu-side">
-                <a href="#" class="nav-link-custom">Seja um Revendedor</a>
+                <a href="{% url 'revendedor' %}" class="nav-link-custom">Seja um Revendedor</a>
                 
             </nav>
 
