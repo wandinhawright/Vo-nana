@@ -232,6 +232,114 @@
 
         </div>
 </div>
+<section class="pq-promo-section w-100">
+    <div class="pq-yellow-splash"></div>
+
+    <div class="container pq-content">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="pq-title display-5">
+                    SEM IDEIA PARA LANCHE? POR QUE NÃO<br>
+                    EXPERIMENTA NOSSO PÃO DE QUEIJO COM...
+                </h2>
+            </div>
+        </div>
+
+        <div class="row align-items-center mt-4">
+            <div class="col-lg-5 text-center position-relative mb-5 mb-lg-0">
+                <img src="{% static 'img/cestadepaodequeijo.png' %}" class="img-fluid" alt="Pão de Queijo" style="max-height: 350px;">
+            </div>
+
+            <div class="col-lg-7 d-flex flex-column align-items-center align-items-lg-end">
+                
+                <div class="pq-badge animado-subir" style="margin-right: 350px;">
+                    <span class="pq-badge-text">REQUEIJÃO CREMOSO!</span>
+                </div>
+
+                <div class="pq-badge">
+                    <span class="pq-badge-text">
+                        <span class="pq-text-goiabada">GOIABADA!</span> (ROMEU E JULIETA)
+                    </span>
+                </div>
+
+                <div class="pq-badge"style="margin-right: 280px;">
+                    <span class="pq-badge-text">
+                         <span class="pq-text-presunto">PRESUNTO</span> + <span class="pq-text-amarelo">QUEIJO COALHO!</span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+/* Estilos específicos para a Seção Pão de Queijo */
+.pq-promo-section {
+    position: relative;
+    background-color: #fdfde1; /* Bege de fundo */
+    padding: 60px 0;
+    overflow: hidden;
+    font-family: 'Arial Black', sans-serif; /* Substitua pela fonte do seu projeto */
+    background-image: radial-gradient(circle at 20% 70%, #ffea00dc 0%, rgba(110, 116, 0, 0) 35%);
+}
+
+/* Mancha amarela no canto superior */
+.pq-yellow-splash {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 350px;
+    height: 400px;
+    background-color: #f8e859;
+    border-radius: 40% 60% 40% 90%;
+    z-index: 0;
+}
+
+.pq-content { position: relative; z-index: 1; }
+
+.pq-title {
+    color: #956549;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.1;
+}
+
+/* As barras inclinadas */
+.pq-badge {
+    background-color: #002615;
+    color: white;
+    padding: 12px 45px;
+    display: inline-block;
+    transform: skew(-25deg); /* Inclinação */
+    margin-bottom: 60px;
+    margin-right: 80px;
+    min-width: 370px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+    border: none;
+}
+
+
+.pq-badge-text {
+    transform: skew(25deg); /* Desfaz a inclinação no texto */
+    display: block;
+    text-align: center;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cores específicas do texto dentro das barras */
+.pq-text-goiabada { color: #fd5555; }
+.pq-text-amarelo { color: #f8e859; }
+.pq-text-presunto { color: #ff9d57; }
+
+@media (max-width: 991px) {
+    .pq-badge { transform: skew(0); min-width: 100%; margin-bottom: 15px; }
+    .pq-badge-text { transform: skew(0); }
+    .pq-yellow-splash { width: 200px; height: 200px; }
+}
+</style>
 {% block head_extra %}
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -254,13 +362,14 @@
                         breakpoint: 992,   // Abaixo de 992px (tablets em pé)
                         settings: {
                             slidesToShow: 2,
+                            
                         }
                     },
                     {
                         breakpoint: 768,   // Abaixo de 768px (celulares)
                         settings: {
                             slidesToShow: 1,
-                            arrows: false // Oculta setas em telas pequenas
+                            
                         }
                     }
                 ]
